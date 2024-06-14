@@ -1,0 +1,16 @@
+<div class="picdetails">
+  <h1>
+    {{ pic.title }}
+  </h1>
+  <div class="picdetails__image-box">
+    <img [src]="pic.url" />
+  </div>
+  <div class="picdetails__text">
+    <p>{{ pic.text }}</p>
+  </div>
+
+  <div class="picdetails__signature">
+    <p>{{ pic.signature }}</p>
+  </div>
+  <button (click)="goBack()" class="picdetails__button">Go Back</button>
+</div>
