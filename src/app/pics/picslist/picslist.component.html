@@ -1,0 +1,9 @@
+<div class="piclist">
+  <div class="piclist__wrapper">
+    <div *ngFor="let pic of pics" class="piclist__image-box">
+      <a [routerLink]="['/pics', pic.id]"
+        ><img [src]="pic.url" class="piclist__image" alt="pic"
+      /></a>
+    </div>
+  </div>
+</div>
