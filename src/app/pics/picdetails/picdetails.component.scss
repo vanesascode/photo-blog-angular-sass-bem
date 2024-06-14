@@ -1,0 +1,56 @@
+@import "../../../styles/partials/_variables",
+  "../../../styles/partials/_mixins", "../../../styles/partials/_breakpoints",
+  "../../../styles/partials/_functions";
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap");
+
+.picdetails {
+  @include flex-column;
+  gap: 1rem;
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+
+  h1 {
+    font-family: "Gwendolyn", sans-serif;
+    font-size: rem(50px);
+    margin: 0;
+    @include display-tiny {
+      padding-top: rem(10px);
+    }
+    @include display-medium {
+      padding-top: rem(50px);
+    }
+  }
+
+  .picdetails__image-box {
+    max-width: 1440px;
+  }
+
+  img {
+    border-radius: 10px;
+    object-fit: contain;
+
+    width: 100%;
+  }
+
+  .picdetails__text {
+    max-width: 500px;
+  }
+
+  .picdetails__signature {
+    font-family: "Gwendolyn", sans-serif;
+    font-size: rem(30px);
+    font-weight: weight(bold);
+    @include flex-center-end;
+    width: 100%;
+    margin-bottom: rem(20px);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .picdetails__button {
+    @include button;
+    margin-bottom: rem(20px);
+  }
+}
