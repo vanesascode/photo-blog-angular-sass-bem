@@ -1,13 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>PardinaBroto</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>PardinaBroto</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      .custom-scrollbar-dark::-webkit-scrollbar,
+      .custom-scrollbar-light::-webkit-scrollbar {
+        width: 10px;
+        height: 3px;
+      }
+
+      /*dark*/
+      .custom-scrollbar-dark::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+
+      .custom-scrollbar-dark::-webkit-scrollbar-thumb {
+        background: #0e8327;
+      }
+
+      .custom-scrollbar-dark::-webkit-scrollbar-thumb:hover {
+        background: #0e5906;
+      }
+    </style>
+  </head>
+  <body class="custom-scrollbar-dark" lang="en">
+    <app-root></app-root>
+  </body>
 </html>
