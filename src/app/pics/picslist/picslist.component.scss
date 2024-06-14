@@ -1,0 +1,46 @@
+@import "../../../styles/partials/_variables",
+  "../../../styles/partials/_mixins", "../../../styles/partials/_breakpoints",
+  "../../../styles/partials/_functions";
+
+.piclist {
+  @include spacing($margin: 0);
+}
+
+.piclist__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  @include display-medium {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
+  @include display-large {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+  @include display-xlarge {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include display-xxlarge {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.piclist__image-box {
+  @include flex-center;
+}
+.piclist__image {
+  object-fit: cover;
+  width: 260px;
+  height: 260px;
+  margin: 0;
+  @include display-medium {
+    width: 210px;
+    height: 210px;
+  }
+  @include display-large {
+  }
+  @include display-xlarge {
+  }
+  border-radius: 5px;
+}
