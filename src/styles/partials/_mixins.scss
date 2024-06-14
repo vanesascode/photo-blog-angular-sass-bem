@@ -1,0 +1,51 @@
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-center {
+  @include row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-end {
+  @include row;
+  justify-content: end;
+  align-items: center;
+}
+
+@mixin flex-column {
+  @include column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  @include row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin button {
+  background-color: $ligth-green;
+  &:hover {
+    background-color: $hover-green;
+  }
+  border: none;
+  border-radius: 10px;
+  color: $primary-color;
+  cursor: pointer;
+  font-size: rem(20px);
+  padding: rem(10px) rem(20px);
+}
+
+@mixin spacing($padding: rem(20px), $margin: rem(20px)) {
+  padding: $padding;
+  margin: $margin;
+}
