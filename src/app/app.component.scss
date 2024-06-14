@@ -1,0 +1,10 @@
+@import "../styles/partials/_variables", "../styles/partials/_mixins",
+  "../styles/partials/_breakpoints", "../styles/partials/_functions";
+
+.home {
+  @include flex-center;
+}
+
+.home__box {
+  max-width: 1400px;
+}
