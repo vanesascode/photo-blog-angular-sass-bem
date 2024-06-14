@@ -1,0 +1,14 @@
+$font-weights: (
+  light: 300,
+  regular: 400,
+  bold: 700,
+  black: 900,
+);
+
+@function weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function rem($pixels, $context: 16px) {
+  @return calc($pixels / $context) * 1rem;
+}
