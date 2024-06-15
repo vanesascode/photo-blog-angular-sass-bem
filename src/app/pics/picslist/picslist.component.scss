@@ -4,43 +4,56 @@
 
 .piclist {
   @include spacing($margin: 0);
-}
-
-.piclist__wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 1rem;
-  @include display-medium {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-  }
-  @include display-large {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-  }
-  @include display-xlarge {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @include display-xxlarge {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.piclist__image-box {
   @include flex-center;
-}
-.piclist__image {
-  object-fit: cover;
-  width: 260px;
-  height: 260px;
-  margin: 0;
-  @include display-medium {
-    width: 210px;
-    height: 210px;
+
+  .piclist__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+    @include display-medium {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+    }
+    @include display-large {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+    }
+    @include display-xlarge {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include display-xxlarge {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .piclist__image-box {
+      @include flex-center;
+      display: relative;
+
+      .piclist__image {
+        object-fit: cover;
+        width: 270px;
+        height: 270px;
+        margin: 0;
+        @include display-medium {
+          width: 210px;
+          height: 210px;
+        }
+        @include display-large {
+        }
+        @include display-xxlarge {
+          width: 245px;
+          height: 245px;
+        }
+        border-radius: 5px;
+        transition: filter 0.3s;
+      }
+      .piclist__image {
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0.6);
+          filter: blur(2px);
+        }
+      }
+    }
   }
-  @include display-large {
-  }
-  @include display-xlarge {
-  }
-  border-radius: 5px;
 }
