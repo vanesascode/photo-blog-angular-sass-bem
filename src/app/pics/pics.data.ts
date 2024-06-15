@@ -87,7 +87,7 @@ export const picsData: Pic[] = [
   },
   {
     id: 12,
-    title: 'Horseshoe on the Watertight',
+    title: 'Horseshoe on the Pond',
     url: 'https://i.postimg.cc/X7F6STKb/1718363823744.jpg',
     text: '"Clear, still water reflects the world perfectly, just like a mindful mind can reflect reality without distortion"',
     signature: 'by Charlotte Joko Beck',
