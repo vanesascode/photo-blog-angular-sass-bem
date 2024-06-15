@@ -4,13 +4,15 @@
   </h1>
   <div class="picdetails__image-box">
     <img [src]="pic.url" />
+    <div class="picdetails__date">
+      <p>{{ pic.date }}</p>
+    </div>
   </div>
   <div class="picdetails__text">
     <p>{{ pic.text }}</p>
-  </div>
-
-  <div class="picdetails__signature">
-    <p>{{ pic.signature }}</p>
+    <div class="picdetails__signature">
+      <p>{{ pic.signature }}</p>
+    </div>
   </div>
   <button (click)="goBack()" class="picdetails__button">Go Back</button>
 </div>
