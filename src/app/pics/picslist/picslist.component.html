@@ -1,7 +1,7 @@
 <div class="piclist">
   <div class="piclist__wrapper">
     <div *ngFor="let pic of pics" class="piclist__image-box">
-      <a [routerLink]="['/pics', pic.id]"
+      <a [routerLink]="['/pics', pic.id]" (click)="scrollToTop()"
         ><img [src]="pic.url" class="piclist__image" alt="pic"
       /></a>
     </div>
