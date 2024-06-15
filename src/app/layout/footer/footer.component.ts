@@ -21,4 +21,8 @@ export class FooterComponent implements OnInit {
       }
     });
   }
+
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
 }
