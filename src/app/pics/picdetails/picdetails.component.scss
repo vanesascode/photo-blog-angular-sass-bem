@@ -23,6 +23,11 @@
 
   .picdetails__image-box {
     max-width: 1440px;
+    .picdetails__date {
+      @include flex-center-end;
+      font-size: small;
+      font-weight: weight(light);
+    }
   }
 
   img {
@@ -43,6 +48,7 @@
     @include flex-center-end;
     width: 100%;
     margin-bottom: rem(20px);
+    margin-top: rem(20px);
   }
 
   p {
@@ -52,5 +58,6 @@
   .picdetails__button {
     @include button;
     margin-bottom: rem(20px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   }
 }
