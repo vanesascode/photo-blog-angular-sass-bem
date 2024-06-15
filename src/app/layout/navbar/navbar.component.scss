@@ -6,24 +6,21 @@
 .header {
   margin-top: rem(20px);
   padding: rem(20px);
-  @include flex-center;
+  @include display-tiny {
+    @include flex-center;
+  }
   @include display-large {
     @include flex-between;
   }
 
   .header__logo {
     @include display-tiny {
-      width: 280px;
+      width: 100%;
     }
     @include display-medium {
-      width: 420px;
+      width: 450px;
     }
-    @include display-xlarge {
-      width: 500px;
-    }
-    @include display-xxlarge {
-      width: 500px;
-    }
+    object-fit: cover;
   }
 
   .header__link {
