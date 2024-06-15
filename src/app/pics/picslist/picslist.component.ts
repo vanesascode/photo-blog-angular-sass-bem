@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pic } from '../pic.model';
 import { PicsService } from '../pics.service';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-picslist',
@@ -13,11 +13,14 @@ import { RouterLink } from '@angular/router';
 })
 export class PicslistComponent implements OnInit {
   pics: Pic[] = [];
-  constructor(private picsService: PicsService) {}
+  constructor(private picsService: PicsService, private router: Router) {}
 
   ngOnInit(): void {
     this.picsService.getAllPics().subscribe((data: Pic[]) => {
       this.pics = data;
     });
+  }
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
   }
 }
