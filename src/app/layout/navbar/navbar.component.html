@@ -2,5 +2,10 @@
   <a routerLink="/">
     <img src="assets/logo.png" alt="Logo image" class="header__logo" />
   </a>
-  <a routerLink="/about" class="header__link">About</a>
+  <ng-container *ngIf="about === 'Photos'; else elseBlock">
+    <a routerLink="/" class="header__link">Photos</a>
+  </ng-container>
+  <ng-template #elseBlock>
+    <a routerLink="/about" class="header__link">About</a>
+  </ng-template>
 </header>
