@@ -2,9 +2,11 @@
   "../styles/partials/_breakpoints", "../styles/partials/_functions";
 
 .home {
-  @include flex-center;
+  width: 100%;
 }
 
 .home__box {
   max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
