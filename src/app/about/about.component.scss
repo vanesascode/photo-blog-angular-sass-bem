@@ -3,14 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap");
 
 .about {
-  @include display-tiny {
-    padding-left: rem(10px);
-    padding-right: rem(10px);
-  }
-  @include display-medium {
-    padding-left: rem(20px);
-    padding-right: rem(20px);
-  }
+  padding-left: rem(20px);
+  padding-right: rem(20px);
 
   h1 {
     font-family: "Gwendolyn", sans-serif;
