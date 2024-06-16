@@ -1,6 +1,24 @@
-# PardinaBroto
+# PHOTO BLOG: About la Pardina de Broto (Aragon Pyrenees)
+
+This is my personal photo blog built with `Angular`, in which I upload pics I take during my walks in the forest surrounding my house. I hope you enjoy it.
+
+![alt text](pardina-cover.jpg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+
+## ⭐️ SCSS - SASS
+
+SCSS (Sassy CSS) and Sass (Syntactically Awesome Stylesheets) are both extensions of CSS that add features like variables, nesting, and mixins to traditional CSS syntax. SCSS is a superset of CSS, meaning that every valid CSS stylesheet is a valid SCSS file with the same semantics. Sass is an older preprocessor syntax that uses indentation instead of brackets to separate code blocks. Both SCSS and Sass need to be compiled into regular CSS before being served to the browser.
+
+## ⭐️ BEM Methodology
+
+BEM (Block Element Modifier) is a popular naming convention for classes in HTML and CSS to create more maintainable and modular code. It helps developers write more consistent and predictable styles by structuring class names in a specific format.
+
+- Block: Represents a standalone entity, like a header, menu, or button.
+- Element: Represents a part of a block that has no standalone meaning and is semantically tied to its block, like a header's title or a menu item.
+- Modifier: Represents a different state or version of a block or element, like a disabled button or a highlighted menu item.
+
+Using BEM helps improve code readability, maintainability, and scalability in large projects.
 
 ## Development server
 
