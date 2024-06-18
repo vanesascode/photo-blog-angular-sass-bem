@@ -41,8 +41,10 @@
   border-radius: 10px;
   color: $primary-color;
   cursor: pointer;
-  font-size: rem(20px);
+  font-size: rem(16px);
   padding: rem(10px) rem(20px);
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.6);
+  margin-bottom: rem(20px);
 }
 
 @mixin spacing($padding: rem(20px), $margin: rem(20px)) {
