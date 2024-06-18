@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { Pic } from './pic.model';
 import { picsData } from './pics.data';
@@ -8,11 +9,32 @@ import { picsData } from './pics.data';
 })
 export class PicsService {
   private data: Pic[] = picsData;
+  isBrowser!: boolean;
+  totalPics!: number;
+  totalPages!: number;
+  picsPerPage: number = 12;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  setPicsPerPageBasedOnWindowWidth(): void {
+    if (this.isBrowser) {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 480) {
+        this.picsPerPage = 6;
+      } else if (windowWidth <= 1440) {
+        this.picsPerPage = 12;
+      } else {
+        this.picsPerPage = 15;
+      }
+    }
+  }
 
   getAllPics() {
-    return of(this.data);
+    this.setPicsPerPageBasedOnWindowWidth();
+    this.totalPics = picsData.length;
+    this.totalPages = Math.ceil(picsData.length / this.picsPerPage);
   }
 
   getPicsWithPagination(
