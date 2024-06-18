@@ -34,15 +34,11 @@ export class PicdetailsComponent implements OnInit {
 
   goBack(): void {
     if (this.pic.id > 1) {
-      this.picsService
-        .getPic(this.pic.id - 1)
-        .subscribe((data: any) => (this.pic = data));
       window.location.href = `/pics/${this.pic.id - 1}`;
     }
   }
 
   goNext(): void {
-    console.log(this.picsService.totalPics);
     if (this.pic.id < this.picsService.totalPics) {
       window.location.href = `/pics/${this.pic.id + 1}`;
     }
