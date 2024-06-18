@@ -21,7 +21,6 @@ export class PicdetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      //paramMap is an observable
       let id = params.get('id');
 
       if (id) {
@@ -30,5 +29,17 @@ export class PicdetailsComponent implements OnInit {
         });
       }
     });
+  }
+
+  goBack(): void {
+    this.picsService
+      .getPic(this.pic.id + 1)
+      .subscribe((data: any) => (this.pic = data));
+  }
+
+  goNext(): void {
+    this.picsService
+      .getPic(this.pic.id - 1)
+      .subscribe((data: any) => (this.pic = data));
   }
 }
