@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Pic } from './pic.model';
 import { picsData } from './pics.data';
 
@@ -12,7 +12,16 @@ export class PicsService {
   constructor() {}
 
   getAllPics() {
-    return of(this.data); //of() - observable that emits a single value and then completes.
+    return of(this.data);
+  }
+
+  getPicsWithPagination(
+    page: number,
+    pageSize: number = 12
+  ): Observable<Pic[]> {
+    const startIndex = (page - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    return of(this.data.slice(startIndex, endIndex));
   }
 
   getPic(id: number) {
