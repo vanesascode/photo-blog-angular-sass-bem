@@ -12,21 +12,29 @@
   h1 {
     text-align: center;
     font-family: "Gwendolyn", sans-serif;
-    font-size: rem(50px);
     margin: 0;
     @include display-tiny {
       padding-top: rem(10px);
+      font-size: rem(40px);
     }
     @include display-medium {
       padding-top: rem(50px);
+      padding-bottom: rem(10px);
+      font-size: rem(50px);
     }
+    line-height: rem(40px);
   }
 
   .picdetails__image-box {
     max-width: 1440px;
     .picdetails__date {
       @include flex-center-end;
-      font-size: small;
+      @include display-tiny {
+        font-size: rem(11px);
+      }
+      @include display-medium {
+        font-size: rem(14px);
+      }
       font-weight: weight(light);
     }
   }
@@ -57,7 +65,11 @@
 
   .picdetails__button {
     @include button;
-    margin-bottom: rem(20px);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+  }
+
+  .picdetails__buttons-box {
+    @include flex-center;
+    padding-top: rem(20px);
+    gap: rem(20px);
   }
 }
