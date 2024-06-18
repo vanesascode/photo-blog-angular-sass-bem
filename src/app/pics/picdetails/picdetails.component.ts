@@ -31,8 +31,4 @@ export class PicdetailsComponent implements OnInit {
       }
     });
   }
-
-  goBack(): void {
-    this.location.back();
-  }
 }
