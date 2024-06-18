@@ -15,11 +15,7 @@
     </div>
   </div>
   <div class="picdetails__buttons-box">
-    <a href="/pics/{{ pic.id + 1 }}"
-      ><button class="picdetails__button">Previous One</button></a
-    >
-    <a href="/pics/{{ pic.id - 1 }}"
-      ><button class="picdetails__button">Next One</button></a
-    >
+    <button class="picdetails__button" (click)="goBack()">Previous One</button>
+    <button class="picdetails__button" (click)="goNext()">Next One</button>
   </div>
 </div>
