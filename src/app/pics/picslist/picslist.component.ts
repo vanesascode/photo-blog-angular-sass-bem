@@ -23,28 +23,15 @@ export class PicslistComponent implements OnInit {
   isBrowser!: boolean;
   pics: Pic[] = [];
   page: number = 1;
-  picsPerPage: number = 8;
+  picsPerPage!: number;
   totalPages!: number;
-
-  setPicsPerPageBasedOnWindowWidth(): void {
-    if (this.isBrowser) {
-      const windowWidth = window.innerWidth;
-      if (windowWidth < 480) {
-        this.picsPerPage = 6;
-      } else if (windowWidth <= 1440) {
-        this.picsPerPage = 12;
-      } else {
-        this.picsPerPage = 15;
-      }
-    }
-  }
+  totalPics!: number;
 
   ngOnInit(): void {
-    this.setPicsPerPageBasedOnWindowWidth();
-
-    this.picsService.getAllPics().subscribe((totalPics: Pic[]) => {
-      this.totalPages = Math.ceil(totalPics.length / this.picsPerPage);
-    });
+    this.picsService.getAllPics();
+    this.picsPerPage = this.picsService.picsPerPage;
+    this.totalPics = this.picsService.totalPics;
+    this.totalPages = this.picsService.totalPages;
 
     this.picsService
       .getPicsWithPagination(this.page, this.picsPerPage)
