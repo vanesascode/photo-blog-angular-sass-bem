@@ -57,3 +57,13 @@
     }
   }
 }
+
+.picslist__buttons-box {
+  @include flex-center;
+  padding-top: rem(20px);
+  gap: rem(20px);
+
+  .picslist__button {
+    @include button;
+  }
+}
