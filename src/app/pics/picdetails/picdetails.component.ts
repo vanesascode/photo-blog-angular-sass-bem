@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location } from '@angular/common';
 import { PicsService } from '../pics.service';
 import { Pic } from '../pic.model';
 
@@ -14,32 +13,38 @@ import { Pic } from '../pic.model';
 export class PicdetailsComponent implements OnInit {
   constructor(
     private picsService: PicsService,
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
   ) {}
   pic!: Pic;
+  totalPics!: number;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = params.get('id');
-
       if (id) {
         this.picsService.getPic(parseInt(id, 10)).subscribe((data: any) => {
           this.pic = data;
         });
       }
     });
+
+    this.picsService.getAllPics();
+    this.totalPics = this.picsService.totalPics;
   }
 
   goBack(): void {
-    this.picsService
-      .getPic(this.pic.id + 1)
-      .subscribe((data: any) => (this.pic = data));
+    if (this.pic.id > 1) {
+      this.picsService
+        .getPic(this.pic.id - 1)
+        .subscribe((data: any) => (this.pic = data));
+      window.location.href = `/pics/${this.pic.id - 1}`;
+    }
   }
 
   goNext(): void {
-    this.picsService
-      .getPic(this.pic.id - 1)
-      .subscribe((data: any) => (this.pic = data));
+    console.log(this.picsService.totalPics);
+    if (this.pic.id < this.picsService.totalPics) {
+      window.location.href = `/pics/${this.pic.id + 1}`;
+    }
   }
 }
