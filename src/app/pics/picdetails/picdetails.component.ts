@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PicsService } from '../pics.service';
 import { Pic } from '../pic.model';
 
@@ -13,7 +13,8 @@ import { Pic } from '../pic.model';
 export class PicdetailsComponent implements OnInit {
   constructor(
     private picsService: PicsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
   pic!: Pic;
   totalPics!: number;
@@ -34,13 +35,13 @@ export class PicdetailsComponent implements OnInit {
 
   goBack(): void {
     if (this.pic.id > 1) {
-      window.location.href = `/pics/${this.pic.id - 1}`;
+      this.router.navigateByUrl(`/pics/${this.pic.id - 1}`);
     }
   }
 
   goNext(): void {
     if (this.pic.id < this.picsService.totalPics) {
-      window.location.href = `/pics/${this.pic.id + 1}`;
+      this.router.navigateByUrl(`/pics/${this.pic.id + 1}`);
     }
   }
 }
