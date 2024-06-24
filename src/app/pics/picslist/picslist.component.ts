@@ -26,6 +26,8 @@ export class PicslistComponent implements OnInit {
   picsPerPage!: number;
   totalPages!: number;
   totalPics!: number;
+  disablePreviousButton!: boolean;
+  disableNextButton!: boolean;
 
   ngOnInit(): void {
     this.picsService.getAllPics();
@@ -38,9 +40,29 @@ export class PicslistComponent implements OnInit {
       .subscribe((data: Pic[]) => {
         this.pics = data;
       });
+
+    if (this.page === 1) {
+      this.disablePreviousButton = true;
+    }
   }
   scrollToTop(): void {
     window.scrollTo(0, 0);
+  }
+
+  disablePreviousButtonFunction(): void {
+    if (this.page === 1) {
+      this.disablePreviousButton = true;
+    } else {
+      this.disablePreviousButton = false;
+    }
+  }
+
+  disableNextButtonFunction(): void {
+    if (this.page === this.totalPages) {
+      this.disableNextButton = true;
+    } else {
+      this.disableNextButton = false;
+    }
   }
 
   nextPage(): void {
@@ -52,6 +74,8 @@ export class PicslistComponent implements OnInit {
           this.page += 1;
         });
     }
+    this.disablePreviousButtonFunction();
+    this.disableNextButtonFunction();
     this.scrollToTop();
   }
 
@@ -64,6 +88,8 @@ export class PicslistComponent implements OnInit {
           this.page -= 1;
         });
     }
+    this.disablePreviousButtonFunction();
+    this.disableNextButtonFunction();
     this.scrollToTop();
   }
 }
