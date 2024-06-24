@@ -34,7 +34,7 @@
 
 @mixin button {
   background-color: $ligth-green;
-  &:hover {
+  &:not(:disabled):hover {
     background-color: $hover-green;
   }
   border: none;
@@ -45,6 +45,10 @@
   padding: rem(10px) rem(20px);
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.6);
   margin-bottom: rem(20px);
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
 }
 
 @mixin spacing($padding: rem(20px), $margin: rem(20px)) {
