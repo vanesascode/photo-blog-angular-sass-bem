@@ -8,8 +8,18 @@
   </div>
 </div>
 <div class="picslist__buttons-box">
-  <button (click)="previousPage()" class="picslist__button">
+  <button
+    (click)="previousPage()"
+    class="picslist__button"
+    [disabled]="disablePreviousButton"
+  >
     Previous pics
   </button>
-  <button (click)="nextPage()" class="picslist__button">Load More</button>
+  <button
+    (click)="nextPage()"
+    class="picslist__button"
+    [disabled]="disableNextButton"
+  >
+    Load More
+  </button>
 </div>
