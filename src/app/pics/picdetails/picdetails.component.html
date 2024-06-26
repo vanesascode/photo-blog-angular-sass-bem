@@ -15,7 +15,19 @@
     </div>
   </div>
   <div class="picdetails__buttons-box">
-    <button class="picdetails__button" (click)="goBack()">Previous One</button>
-    <button class="picdetails__button" (click)="goNext()">Next One</button>
+    <button
+      class="picdetails__button"
+      (click)="goBack()"
+      [disabled]="disablePreviousButton"
+    >
+      Previous One
+    </button>
+    <button
+      class="picdetails__button"
+      (click)="goNext()"
+      [disabled]="disableNextButton"
+    >
+      Next One
+    </button>
   </div>
 </div>
