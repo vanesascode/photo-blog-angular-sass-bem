@@ -41,9 +41,7 @@ export class PicslistComponent implements OnInit {
         this.pics = data;
       });
 
-    if (this.page === 1) {
-      this.disablePreviousButton = true;
-    }
+    this.disablePreviousButtonFunction();
   }
   scrollToTop(): void {
     window.scrollTo(0, 0);
